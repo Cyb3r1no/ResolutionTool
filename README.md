@@ -110,3 +110,58 @@ Only disable duplicate or unused monitors.
 ## Command Line Usage (Advanced Users)
 
 Advanced users may use:
+
+rescli.bat
+
+
+Examples:
+
+rescli config Opens configuration window
+rescli game Switch to custom resolution
+rescli native Restore native resolution
+rescli status Show current resolution info
+rescli fix-nvidia Update NVIDIA registry (admin required)
+
+
+Normal users do NOT need this.
+
+---
+
+## Project Structure
+
+ResolutionTool/
+├── rescli.bat
+├── README.md
+├── config/
+│ └── settings.json
+├── scripts/
+│ ├── rescli.ps1
+│ └── NV_Modes.ps1
+├── bin/
+│ └── nircmd tools
+└── launchers/
+├── ResolutionTool Config.bat
+├── Enable Custom Resolution.bat
+└── Restore Native Resolution.bat
+
+
+The **launchers** folder is automatically created and contains easy-to-use
+files for normal users.
+
+---
+
+## GPU Compatibility
+
+• NVIDIA GPUs: Supported  
+• AMD GPUs: Not officially supported
+
+---
+
+## Notes
+
+If NVIDIA Control Panel does not allow creating custom resolutions,
+ResolutionTool automatically registers them in the driver registry.
+
+---
+
+Enjoy smoother stretched gameplay.
