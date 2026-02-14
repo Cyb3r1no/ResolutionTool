@@ -193,14 +193,14 @@ function Invoke-Config {
             # Generate launcher scripts
             $launchDir = Join-Path $ProjectRoot "launchers"
             if (-not (Test-Path $launchDir)) { New-Item -ItemType Directory -Path $launchDir -Force | Out-Null }
-            $configBat = Join-Path $launchDir "ResolutionTool Config.bat"
-            $enableBat = Join-Path $launchDir "Enable Custom Resolution.bat"
-            $restoreBat = Join-Path $launchDir "Restore Native Resolution.bat"
+            $configBat = Join-Path $launchDir "Config.bat"
+            $enableBat = Join-Path $launchDir "../Enable Custom Resolution.bat"
+            $restoreBat = Join-Path $launchDir "../Restore Native Resolution.bat"
             "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0..\scripts\rescli.ps1`" config`r`nexit" |
                 Set-Content $configBat -Encoding ASCII
-            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0..\scripts\rescli.ps1`" game`r`npause" |
+            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0scripts\rescli.ps1`" game`r`nexit" |
                 Set-Content $enableBat -Encoding ASCII
-            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0..\scripts\rescli.ps1`" native`r`npause" |
+            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0scripts\rescli.ps1`" native`r`nexit" |
                 Set-Content $restoreBat -Encoding ASCII
 
             [System.Windows.Forms.MessageBox]::Show(
