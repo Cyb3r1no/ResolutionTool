@@ -96,7 +96,7 @@ If your custom resolution does not show:
    - Right-click monitors you are NOT using.
    - Select **Disable device**.
 4. Restart the computer.
-![alt text](image.png)
+![alt text](app/image.png)
 After restart, try enabling the custom resolution again.
 
 IMPORTANT:

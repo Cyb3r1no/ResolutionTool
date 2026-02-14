@@ -193,15 +193,24 @@ function Invoke-Config {
             # Generate launcher scripts
             $launchDir = Join-Path $ProjectRoot "launchers"
             if (-not (Test-Path $launchDir)) { New-Item -ItemType Directory -Path $launchDir -Force | Out-Null }
-            $configBat = Join-Path $launchDir "Config.bat"
-            $enableBat = Join-Path $launchDir "../Enable Custom Resolution.bat"
-            $restoreBat = Join-Path $launchDir "../Restore Native Resolution.bat"
+            $configBat = Join-Path $launchDir "ResolutionTool Config.bat"
+            $enableBat = Join-Path $launchDir "Enable Custom Resolution.bat"
+            $restoreBat = Join-Path $launchDir "Restore Native Resolution.bat"
             "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0..\scripts\rescli.ps1`" config`r`nexit" |
                 Set-Content $configBat -Encoding ASCII
-            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0scripts\rescli.ps1`" game`r`nexit" |
+            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0..\scripts\rescli.ps1`" game`r`nexit" |
                 Set-Content $enableBat -Encoding ASCII
-            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0scripts\rescli.ps1`" native`r`nexit" |
+            "@echo off`r`ncd /d `"%~dp0..`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0..\scripts\rescli.ps1`" native`r`nexit" |
                 Set-Content $restoreBat -Encoding ASCII
+
+            # Copy launchers to project root with correct paths
+            $rootDir = Split-Path -Parent $ProjectRoot
+            $rootEnable = Join-Path $rootDir "Enable Custom Resolution.bat"
+            $rootRestore = Join-Path $rootDir "Restore Native Resolution.bat"
+            "@echo off`r`ncd /d `"%~dp0`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0app\scripts\rescli.ps1`" game`r`nexit" |
+                Set-Content $rootEnable -Encoding ASCII
+            "@echo off`r`ncd /d `"%~dp0`"`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0app\scripts\rescli.ps1`" native`r`nexit" |
+                Set-Content $rootRestore -Encoding ASCII
 
             [System.Windows.Forms.MessageBox]::Show(
                 "Launcher files created in ResolutionTool folder.",

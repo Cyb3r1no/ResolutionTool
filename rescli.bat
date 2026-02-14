@@ -1,3 +1,2 @@
 @echo off
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\rescli.ps1" config
-exit
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0app\scripts\rescli.ps1" config
