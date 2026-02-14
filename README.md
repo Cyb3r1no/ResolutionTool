@@ -27,9 +27,11 @@ resolutions easily before and after gaming.
 
 Popular choices:
 
-• 2100 × 1440
-• 1566 × 1080
-• 1280 × 880
+ 2100 × 1440
+
+ 1566 × 1080
+ 
+ 1280 × 880
 
 You can use any resolution you prefer.
 
@@ -85,8 +87,6 @@ Typical usage:
 
 ## Monitor Fix (If resolution does not appear)
 
-On some systems, Windows loads multiple monitor entries which can
-prevent custom resolutions from appearing correctly.
 
 If your custom resolution does not show:
 
@@ -99,51 +99,7 @@ If your custom resolution does not show:
 ![alt text](app/image.png)
 After restart, try enabling the custom resolution again.
 
-IMPORTANT:
-Do NOT disable your active monitor.
-Only disable duplicate or unused monitors.
 
----
-
-## Command Line Usage (Advanced Users)
-
-Advanced users may use:
-
-rescli.bat
-
-Examples:
-
-rescli config      Opens configuration window
-rescli game        Switch to custom resolution
-rescli native      Restore native resolution
-rescli status      Show current resolution info
-rescli fix-nvidia  Update NVIDIA registry (admin required)
-
-Normal users do NOT need this.
-
----
-
-## Project Structure
-
-ResolutionTool/
-├── rescli.bat
-├── README.md
-├── config/
-│   └── settings.json
-├── scripts/
-│   ├── rescli.ps1
-│   └── NV_Modes.ps1
-├── bin/
-│   └── nircmd tools
-└── launchers/
-    ├── ResolutionTool Config.bat
-    ├── Enable Custom Resolution.bat
-    └── Restore Native Resolution.bat
-
-The launchers folder is automatically created and contains easy-to-use
-files for normal users.
-
----
 
 ## GPU Compatibility
 
