@@ -1,23 +1,25 @@
+
+
 # ResolutionTool
 
-ResolutionTool allows you to switch between native and stretched
-game resolutions with one click.
+ResolutionTool allows you to switch between native and stretched game
+resolutions with one click.
 
-It is especially useful for players who cannot create custom
-resolutions from NVIDIA Control Panel (common with OLED and newer monitors).
+It is especially useful for players who cannot create custom resolutions
+from NVIDIA Control Panel (common with OLED and newer monitors).
 
-The tool automatically registers custom resolutions and lets you
-switch resolutions easily before and after gaming.
+The tool automatically registers custom resolutions and lets you switch
+resolutions easily before and after gaming.
 
 ---
 
 ## Features
 
-- Add custom resolutions automatically
-- One-click resolution switching
-- No NVIDIA Control Panel tweaks required
-- Simple launcher files for everyday use
-- Designed for gaming (Valorant, FPS titles, etc.)
+• Add custom resolutions automatically  
+• One-click resolution switching  
+• No NVIDIA Control Panel tweaks required  
+• Simple launcher files for everyday use  
+• Designed for gaming (Valorant, FPS titles, etc.)
 
 ---
 
@@ -25,9 +27,9 @@ switch resolutions easily before and after gaming.
 
 Popular choices:
 
-- 2100 × 1440
-- 1566 × 1080
-- 1280 × 880
+• 2100 × 1440  
+• 1566 × 1080  
+• 1280 × 880  
 
 You can use any resolution you prefer.
 
@@ -46,92 +48,65 @@ ResolutionTool Config.bat
 
 The tool will automatically:
 
-- Save configuration
-- Register resolution in NVIDIA driver
-- Prepare launcher scripts
+• Save configuration  
+• Register resolution in NVIDIA driver  
+• Prepare launcher scripts  
 
 You only need to do this once.
 
 ---
 
+## IMPORTANT: Restart Required
+
+After running configuration for the first time, you **must restart Windows**
+so the new resolution becomes available.
+
+Without restarting, the custom resolution may not appear.
+
+Restart is required only once after configuration.
+
+---
+
 ## Switching Resolution
 
-Open the **launchers** folder and use:
+Open the **launchers** folder and run:
 
-Enable Custom Resolution.bat
+### Enable Custom Resolution.bat
+Switches to your custom stretched resolution before gaming.
 
-Switches to your custom stretched resolution.
+### Restore Native Resolution.bat
+Returns your monitor to native resolution after gaming.
 
-Restore Native Resolution.bat
+Typical usage:
 
-Returns your monitor to native resolution.
+• Enable custom resolution before gaming  
+• Restore native resolution after gaming
 
-Typical use:
-- Run custom resolution before gaming
-- Restore native resolution after gaming
+---
+
+## Monitor Fix (If custom resolution does not appear)
+
+On some systems, Windows loads multiple monitor entries which may prevent
+custom resolutions from appearing correctly.
+
+![alt text](image.png)
+If your custom resolution does not show:
+
+1. Press **Win + X** → open **Device Manager**.
+2. Expand **Monitors**.
+3. If multiple monitors appear:
+- Right-click monitors you are NOT using.
+- Select **Disable device**.
+4. Restart the computer.
+
+After restart, enable custom resolution again.
+
+⚠ Important:
+Do **not** disable your active monitor.  
+Only disable duplicate or unused monitors.
 
 ---
 
 ## Command Line Usage (Advanced Users)
 
-You can also run commands manually using:
-
-rescli.bat
-
-
-Examples:
-
-rescli config Opens configuration window
-rescli game Switch to custom resolution
-rescli native Restore native resolution
-rescli status Show current resolution info
-rescli fix-nvidia Update NVIDIA registry (admin required)
-
-
-Normal users do NOT need to use this.
-
----
-
-## Project Structure
-
-ResolutionTool/
-│
-├── rescli.bat Command entry point
-├── README.md
-│
-├── config/
-│ └── settings.json Resolution settings
-│
-├── scripts/
-│ ├── rescli.ps1 Main script logic
-│ └── NV_Modes.ps1 NVIDIA registry updater
-│
-├── bin/
-│ └── nircmd tools Resolution switching backend
-│
-└── launchers/
-├── ResolutionTool Config.bat
-├── Enable Custom Resolution.bat
-└── Restore Native Resolution.bat
-
-
-The **launchers** folder is automatically created and contains
-easy-to-use files for normal users.
-
----
-
-## GPU Compatibility
-
-- NVIDIA GPUs: Supported
-- AMD GPUs: Not officially supported
-
----
-
-## Notes
-
-If NVIDIA Control Panel does not allow creating custom resolutions,
-ResolutionTool automatically registers them using the driver registry.
-
----
-
-Enjoy smoother stretched gameplay.
+Advanced users may use:
