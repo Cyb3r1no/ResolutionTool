@@ -15,10 +15,10 @@ resolutions easily before and after gaming.
 
 ## Features
 
-• Add custom resolutions automatically  
-• One-click resolution switching  
-• No NVIDIA Control Panel tweaks required  
-• Simple launcher files for everyday use  
+• Add custom resolutions automatically
+• One-click resolution switching
+• No NVIDIA Control Panel tweaks required
+• Simple launcher files for everyday use
 • Designed for gaming (Valorant, FPS titles, etc.)
 
 ---
@@ -27,9 +27,9 @@ resolutions easily before and after gaming.
 
 Popular choices:
 
-• 2100 × 1440  
-• 1566 × 1080  
-• 1280 × 880  
+• 2100 × 1440
+• 1566 × 1080
+• 1280 × 880
 
 You can use any resolution you prefer.
 
@@ -40,17 +40,16 @@ You can use any resolution you prefer.
 1. Open the **launchers** folder.
 2. Run:
 
-ResolutionTool Config.bat
-
+   ResolutionTool Config.bat
 
 3. Enter your desired game resolution.
 4. Press **Save**.
 
 The tool will automatically:
 
-• Save configuration  
-• Register resolution in NVIDIA driver  
-• Prepare launcher scripts  
+• Save configuration
+• Register resolution in NVIDIA driver
+• Prepare launcher scripts
 
 You only need to do this once.
 
@@ -58,8 +57,8 @@ You only need to do this once.
 
 ## IMPORTANT: Restart Required
 
-After running configuration for the first time, you **must restart Windows**
-so the new resolution becomes available.
+After running configuration for the first time, you MUST restart
+Windows so the new resolution becomes available.
 
 Without restarting, the custom resolution may not appear.
 
@@ -71,38 +70,37 @@ Restart is required only once after configuration.
 
 Open the **launchers** folder and run:
 
-### Enable Custom Resolution.bat
-Switches to your custom stretched resolution before gaming.
+Enable Custom Resolution.bat
+Switches to your custom stretched resolution.
 
-### Restore Native Resolution.bat
-Returns your monitor to native resolution after gaming.
+Restore Native Resolution.bat
+Returns your monitor to native resolution.
 
 Typical usage:
 
-• Enable custom resolution before gaming  
+• Enable custom resolution before gaming
 • Restore native resolution after gaming
 
 ---
 
-## Monitor Fix (If custom resolution does not appear)
+## Monitor Fix (If resolution does not appear)
 
-On some systems, Windows loads multiple monitor entries which may prevent
-custom resolutions from appearing correctly.
+On some systems, Windows loads multiple monitor entries which can
+prevent custom resolutions from appearing correctly.
 
-![alt text](image.png)
 If your custom resolution does not show:
 
-1. Press **Win + X** → open **Device Manager**.
+1. Press **Win + X** and open **Device Manager**.
 2. Expand **Monitors**.
-3. If multiple monitors appear:
-- Right-click monitors you are NOT using.
-- Select **Disable device**.
+3. If multiple monitors are listed:
+   - Right-click monitors you are NOT using.
+   - Select **Disable device**.
 4. Restart the computer.
+![alt text](image.png)
+After restart, try enabling the custom resolution again.
 
-After restart, enable custom resolution again.
-
-⚠ Important:
-Do **not** disable your active monitor.  
+IMPORTANT:
+Do NOT disable your active monitor.
 Only disable duplicate or unused monitors.
 
 ---
@@ -113,15 +111,13 @@ Advanced users may use:
 
 rescli.bat
 
-
 Examples:
 
-rescli config Opens configuration window
-rescli game Switch to custom resolution
-rescli native Restore native resolution
-rescli status Show current resolution info
-rescli fix-nvidia Update NVIDIA registry (admin required)
-
+rescli config      Opens configuration window
+rescli game        Switch to custom resolution
+rescli native      Restore native resolution
+rescli status      Show current resolution info
+rescli fix-nvidia  Update NVIDIA registry (admin required)
 
 Normal users do NOT need this.
 
@@ -133,27 +129,26 @@ ResolutionTool/
 ├── rescli.bat
 ├── README.md
 ├── config/
-│ └── settings.json
+│   └── settings.json
 ├── scripts/
-│ ├── rescli.ps1
-│ └── NV_Modes.ps1
+│   ├── rescli.ps1
+│   └── NV_Modes.ps1
 ├── bin/
-│ └── nircmd tools
+│   └── nircmd tools
 └── launchers/
-├── ResolutionTool Config.bat
-├── Enable Custom Resolution.bat
-└── Restore Native Resolution.bat
+    ├── ResolutionTool Config.bat
+    ├── Enable Custom Resolution.bat
+    └── Restore Native Resolution.bat
 
-
-The **launchers** folder is automatically created and contains easy-to-use
+The launchers folder is automatically created and contains easy-to-use
 files for normal users.
 
 ---
 
 ## GPU Compatibility
 
-• NVIDIA GPUs: Supported  
-• AMD GPUs: Not officially supported
+NVIDIA GPUs: Supported
+AMD GPUs: Not officially supported
 
 ---
 
